@@ -9,6 +9,15 @@ from datetime import datetime
 session_file = r"session.json"
 
 
+init_time = "15:55"
+while 1:
+    t = datetime.now().strftime("%H:%M")
+    print(t)
+    if t == init_time:
+        break
+    else : time.sleep(50)
+
+
 with sync_playwright() as p:
     # 启动浏览器并创建一个新的上下文
 
@@ -38,5 +47,5 @@ with sync_playwright() as p:
                 break
         print(start_time,after_time)
 
-    timer("11:59:59.900")
+    timer("15:59:59.900")
     time.sleep(1000)
